@@ -1,20 +1,21 @@
 return {
   {
     "williamboman/mason.nvim",
+    version = false,
     config = function()
       require("mason").setup()
     end
   },
   {
     "williamboman/mason-lspconfig.nvim",
+    version = false,
     config = function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls","tsserver"}
-      })
+      -- require("mason-lspconfig").setup({}) //Produces error because of version update
     end
   },
   {
     "neovim/nvim-lspconfig",
+    version = false,
     config = function()
       local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
@@ -23,7 +24,7 @@ return {
       lspconfig.lua_ls.setup({
         capabilities = capabilities
       })
-      lspconfig.tsserver.setup({
+      lspconfig["ts_ls"].setup({
         capabilities = capabilities
       })
 
