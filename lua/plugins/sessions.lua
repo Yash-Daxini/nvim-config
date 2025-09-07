@@ -9,10 +9,7 @@ return {
 					theme_conf = { border = true },
 					previewer = false,
 					buftypes_to_ignore = {},
-				},
-				vim.keymap.set("n", "<leader>m", require("auto-session.session-lens").search_session,        {
-					noremap = true,
-				}),
+				}
 			})
 		end,
 	},
